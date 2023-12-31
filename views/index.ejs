@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<header itemscope itemid="page introduction" itemprop="">
+    <section itemid="introduction">
+        <%- include('partials/home/intro') -%>
+    </section>
+</header>
+<main class="container mt-5 pt-5">
+    <section>
+        <div>
+            <%- include('partials/home/article') -%>
+        </div>
+    </section>
+    <section>
+        <div>
+            <%- include('partials/home/features') -%>
+        </div>
+    </section>
+</main>
+<section>
+    <div>
+        <%- include('partials/home/subscribe') -%>
+    </div>
+</section>
+<main class="container mt-5 pt-5">
+    <section>
+        <div>
+            <%- include('partials/home/crafting-art') -%>
+        </div>
+    </section>
+    <section>
+        <div>
+            <%- include('partials/home/blogs') -%>
+        </div>
+    </section>
+</main>
+<%- include('layouts/footer') -%>
+</body>
+<%- include('layouts/scripts') -%>
+</html>

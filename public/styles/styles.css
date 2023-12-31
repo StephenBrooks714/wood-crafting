@@ -1,0 +1,42 @@
+.contact-bg {
+    background: url(https://jooinn.com/images/wood-crafting-3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.projects-bg {
+    background: url(https://www.craftsglossary.com/wp-content/uploads/2018/06/wood-carving-1024x517.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.account-bg {
+    background: url(https://wooddad.com/wp-content/uploads/2019/08/WOODEN.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.line {
+    border: 2px solid grey;
+    width: 80%;
+    height: 1px;
+}
+.blog-image {
+    width: 100%;
+    height: 260px;
+}
+@media(max-width: 991px){
+    .blog-image {
+        width: 100%;
+        height: 450px;
+    }
+}
+@media(max-width: 440px){
+    .blog-image {
+        width: 100%;
+        height: 350px;
+    }
+}

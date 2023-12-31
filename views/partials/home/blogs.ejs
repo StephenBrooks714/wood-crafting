@@ -1,0 +1,47 @@
+<div class="mt-4">
+
+    <!--Section: Content-->
+    <section class="mb-5 pb-5">
+
+        <!-- Grid row -->
+        <div class="row align-items-center">
+            <div class="col-md-12 mb-5">
+                <h5 class="h3 font-weight-bold">Read Our Blogs & Follow Our DIY Projects</h5>
+            </div>
+
+            <% for(i=0; i < blogs.length; i++) { %>
+                <!-- Grid column -->
+                <div class="col-lg-5 col-md-6 mb-lg-0 mb-4">
+
+                    <!-- Featured image -->
+                    <div class="view overlay rounded z-depth-1 mb-lg-0 mb-4">
+                        <img class="img-fluid blog-image" src="<%= blogs[i].image %>" alt="<%= blogs[i].title %>">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-lg-7 col-md-6 mb-md-0 mb-4 mt-xl-4">
+
+                    <h3 class="font-weight-normal mb-4"><%= blogs[i].title %></h3>
+                    <p class="text-muted"><%= blogs[i].body.substring(0, 220) %>. . .</p>
+                    <a class="btn btn-outline-brown mx-0" href="/post/<%= blogs[i]._id %>">Read More <i class="fas fa-arrow-right fs-9 ml-2"></i></a>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="line">
+            <% } %>
+
+        </div>
+        <!-- Grid row -->
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>

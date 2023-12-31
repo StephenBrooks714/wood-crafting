@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body class="contact-bg">
+<%- include('layouts/navBar') -%>
+<main>
+    <div class="container flex-center text-center">
+        <div class="row justify-content-center align-items-center" style="margin-top: 140px; margin-bottom: 50px;">
+            <div class="col-md-12 wow fadeIn mb-3">
+                <!--Section: Content-->
+                <section class="text-center px-md-5 mx-md-5 p-2 card rgba-black-light">
+
+                    <!-- Section heading -->
+                    <h1 class="display-4 text-white mb-2 wow fadeInDown" data-wow-delay="0.3s">
+                        Contact Us
+                    </h1>
+                    <!-- Section description -->
+                    <p class="text-center text-white w-responsive mx-auto mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+                        eum porro a pariatur veniam.</p>
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-9 mb-md-0 mb-5">
+
+                            <form action="/send/form" method="post" enctype="multipart/form-data">
+
+                                <!-- Grid row -->
+                                <div class="row">
+
+                                    <!-- Grid column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" name="name" id="contact-name" class="form-control">
+                                            <label for="contact-name" class="text-white">Your name</label>
+                                        </div>
+                                    </div>
+                                    <!-- Grid column -->
+
+                                    <!-- Grid column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="email" name="from" id="contact-email" class="form-control">
+                                            <label for="contact-email" class="text-white">Your email</label>
+                                        </div>
+                                    </div>
+                                    <!-- Grid column -->
+
+                                </div>
+                                <!-- Grid row -->
+
+                                <!-- Grid row -->
+                                <div class="row">
+
+                                    <!-- Grid column -->
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <input type="text" name="subject" id="contact-Subject" class="form-control">
+                                            <label for="contact-Subject" class="text-white">Subject</label>
+                                        </div>
+                                    </div>
+                                    <!-- Grid column -->
+
+                                </div>
+                                <!-- Grid row -->
+
+                                <!-- Grid row -->
+                                <div class="row">
+
+                                    <!-- Grid column -->
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <textarea id="contact-message" name="text" class="form-control md-textarea" rows="3"></textarea>
+                                            <label for="contact-message" class="text-white">Your message</label>
+                                        </div>
+                                    </div>
+                                    <!-- Grid column -->
+
+                                </div>
+                                <!-- Grid row -->
+                                <div class="text-center text-md-left">
+                                    <button class="btn btn-primary btn-md btn-rounded" type="submit">Send</button>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <i class="fas fa-map-marker-alt fa-2x blue-text"></i>
+                                    <p class="text-white">San Francisco, CA 94126, USA</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone fa-2x mt-4 blue-text"></i>
+                                    <p class="text-white">+ 01 234 567 89</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope fa-2x mt-4 blue-text"></i>
+                                    <p class="mb-0 text-white">contact@example.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </section>
+                <!--Section: Content-->
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('layouts/footer') -%>
+</body>
+<%- include('layouts/scripts') -%>
+</html>
