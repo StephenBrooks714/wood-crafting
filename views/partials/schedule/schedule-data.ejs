@@ -1,0 +1,79 @@
+<style>
+    i {
+        font-size: 15px;
+    }
+</style>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Confirmed?</th>
+            <th scope="col">Event</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if(schedule !== "") { %>
+            <% for(i=0; i < schedule.length; i++) { %>
+                <tr>
+                    <th scope="row"><i class="fas green-text fa-check-circle"></i></th>
+                    <td><%= schedule[i].title %></td>
+                    <td><%= schedule[i].date %></td>
+                    <td><%= schedule[i].time %></td>
+                    <td>
+                        <a href="mailto:<%= schedule[i].contact %>">
+                            <i class="far blue-text fa-envelope"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <a type="button" class="text-info" data-toggle="modal" data-target="#<%= schedule[i].id %>">
+                            <i class="far blue-grey-text fa-sticky-note"></i>
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="<%= schedule[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><%= schedule[i].title %></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <%= schedule[i].notes %>
+                                        </p>
+                                        <strong><%= schedule[i].location %></strong>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="/delete/schedule/<%= schedule[i]._id %>">
+                            <i class="fas orange-text fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td>
+                    There is nothing Scheduled.
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>

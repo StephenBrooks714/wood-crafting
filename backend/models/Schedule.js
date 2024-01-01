@@ -10,11 +10,10 @@ const SchedulePostSchema = new Schema ({
     },
     id: String,
     location: String,
-    url: String,
+    time: String,
     date: String,
     contact: String,
-    feature: Array,
-    detail: String,
+    notes: String,
     datePosted:{
         type: Date,
         default: new Date()

@@ -24,12 +24,22 @@ const loginController = require("../controllers/loginPage");
 const loginUserController = require("../controllers/loginUser");
 const logoutController = require("../controllers/logoutUser");
 const adminController = require("../controllers/adminPage");
+// schedule
+const newScheduleController = require("../controllers/newSchedulePage");
+const storeScheduleController = require("../controllers/storeSchedule");
+const scheduleController = require("../controllers/schedulePage");
+const deleteScheduleController = require("../controllers/deleteSchedule");
 
 const auth = require("../middleware/ifAuthorized");
 
 router.get("/", cache(2), homeController);
 router.get("/contact", cache(2), contactController);
 router.post("/send/form", sendFormController);
+// schedule
+router.get("/newSchedule", auth, newScheduleController);
+router.post("/store/schedule", storeScheduleController);
+router.get("/schedule", auth, cache(2), auth, scheduleController);
+router.get("/delete/schedule/:id", auth, deleteScheduleController);
 // blogs
 router.get("/newPost", auth, newPostController);
 router.post("/store/post", storePostController);

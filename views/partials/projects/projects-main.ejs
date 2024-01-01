@@ -1,0 +1,57 @@
+<% if(projects === "") { %>
+    <!-- First column -->
+    <div class="col-lg-4 col-md-12 mb-4">
+
+        <div class="view overlay z-depth-1">
+            <img src="https://mdbootstrap.com/img/Photos/Others/img3.jpg" class="img-fluid" alt="Sample image">
+            <div class="mask flex-center blue-gradient-rgba">
+                <a class="btn btn-outline-white btn-rounded">see more</a>
+            </div>
+        </div>
+        <p class="text-uppercase text-center text-white-50 mt-4 mb-0">Lorem ipsum dolor sit</p>
+
+    </div>
+    <!-- First column -->
+
+    <!-- Second column -->
+    <div class="col-lg-4 col-md-6 mb-4">
+
+        <div class="view overlay z-depth-1">
+            <img src=" https://mdbootstrap.com/img/Photos/Others/img4.jpg" class="img-fluid" alt="Sample image">
+            <div class=" mask flex-center blue-gradient-rgba">
+                <a class="btn btn-outline-white btn-rounded">see more</a>
+            </div>
+        </div>
+        <p class="text-uppercase text-center text-white-50 mt-4 mb-0">Lorem ipsum dolor sit</p>
+
+    </div>
+    <!-- Second column -->
+
+    <!-- Third column -->
+    <div class="col-lg-4 col-md-6 mb-4">
+
+        <div class="view overlay z-depth-1">
+            <img src="https://mdbootstrap.com/img/Photos/Others/img8.jpg" class="img-fluid" alt="Sample image">
+            <div class="mask flex-center blue-gradient-rgba">
+                <a class="btn  btn-outline-white btn-rounded">see more</a>
+            </div>
+        </div>
+        <p class="text-uppercase text-center text-white-50 mt-4 mb-0">Lorem ipsum dolor sit</p>
+
+    </div>
+    <!-- Third column -->
+<% } else { %>
+    <% for(i=0; i < projects.length; i++) { %>
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <div class="view overlay z-depth-1">
+                <img src="<%= projects[i].image %>" class="img-fluid" alt="<%= projects[i].title %>">
+                <div class="mask flex-center blue-gradient-rgba">
+                    <a href="/singleProject/<%= projects[i]._id %>" class="btn  btn-outline-white btn-rounded">see more</a>
+                </div>
+            </div>
+            <p class="text-uppercase text-center text-white-50 mt-4 mb-0"><%= projects[i].title %></p>
+
+        </div>
+    <% } %>
+<% } %>

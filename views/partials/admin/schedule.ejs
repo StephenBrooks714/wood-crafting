@@ -1,27 +1,13 @@
 <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Dapibus ac facilisis in
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Morbi leo risus
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Porta ac consectetur ac
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Vestibulum at eros
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
+    <% for(i=0; i < schedule.length; i++) { %>
+        <li class="list-group-item"><%= schedule[i].title %>
+            <i class="far fa-edit"></i>
+            <a href="/schedule">
+                <i class="fab fa-readme"></i>
+            </a>
+            <a href="/delete/schedule/<%= schedule[i]._id %>">
+                <i class="fas text-warning fa-trash-alt"></i>
+            </a>
+        </li>
+    <% } %>
 </ul>

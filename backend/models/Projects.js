@@ -9,7 +9,6 @@ const ProjectPostSchema = new Schema ({
         required: true
     },
     image: String,
-    image2: String,
     summary: String,
     feature: Array,
     detail: String,

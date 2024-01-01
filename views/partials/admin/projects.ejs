@@ -1,27 +1,16 @@
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Dapibus ac facilisis in
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Morbi leo risus
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Porta ac consectetur ac
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">Vestibulum at eros
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-</ul>
+<% if(projects !== "") { %>
+    <ul class="list-group list-group-flush">
+        <% for(i=0; i < projects.length; i++) { %>
+            <li class="list-group-item"><%= projects[i].title %>
+                <a href="/singleProject/<%= projects[i]._id %>">
+                    <i class="fab fa-readme"></i>
+                </a>
+                <a href="/delete/project/<%= projects[i]._id %>">
+                    <i class="fas text-warning fa-trash-alt"></i>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+<% } else { %>
+    <p class="h5">There are no projects to show.</p>
+<% } %>

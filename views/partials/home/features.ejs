@@ -1,62 +1,82 @@
 <div class="row mb-5 pb-5 text-center justify-content-center">
-    <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
-        <div class="card">
-            <div class="card-header-pills">
-                <a href="/">
-                    <img src="https://placehold.co/300x200"
-                         class="w-100"
-                         alt="card-img-1"
-                    />
-                </a>
+    <% if(projects !== 4) { %>
+        <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
+            <div class="card">
+                <div class="card-header-pills">
+                    <a href="/">
+                        <img src="https://placehold.co/300x200"
+                             class="w-100"
+                             alt="card-img-1"
+                        />
+                    </a>
+                </div>
+                <p class="card-body">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
+                </p>
             </div>
-            <p class="card-body">
-                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
-            </p>
         </div>
-    </div>
-    <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
-        <div class="card">
-            <div class="card-header-pills">
-                <a href="/">
-                    <img src="https://placehold.co/300x200"
-                         class="w-100"
-                         alt="card-img-1"
-                    />
-                </a>
+        <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
+            <div class="card">
+                <div class="card-header-pills">
+                    <a href="/">
+                        <img src="https://placehold.co/300x200"
+                             class="w-100"
+                             alt="card-img-1"
+                        />
+                    </a>
+                </div>
+                <p class="card-body">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
+                </p>
             </div>
-            <p class="card-body">
-                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
-            </p>
         </div>
-    </div>
-    <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
-        <div class="card">
-            <div class="card-header-pills">
-                <a href="/">
-                    <img src="https://placehold.co/300x200"
-                         class="w-100"
-                         alt="card-img-1"
-                    />
-                </a>
+        <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
+            <div class="card">
+                <div class="card-header-pills">
+                    <a href="/">
+                        <img src="https://placehold.co/300x200"
+                             class="w-100"
+                             alt="card-img-1"
+                        />
+                    </a>
+                </div>
+                <p class="card-body">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
+                </p>
             </div>
-            <p class="card-body">
-                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
-            </p>
         </div>
-    </div>
-    <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
-        <div class="card">
-            <div class="card-header-pills">
-                <a href="/">
-                    <img src="https://placehold.co/300x200"
-                         class="w-100"
-                         alt="card-img-1"
-                    />
-                </a>
+        <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
+            <div class="card">
+                <div class="card-header-pills">
+                    <a href="/">
+                        <img src="https://placehold.co/300x200"
+                             class="w-100"
+                             alt="card-img-1"
+                        />
+                    </a>
+                </div>
+                <p class="card-body">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
+                </p>
             </div>
-            <p class="card-body">
-                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</q>
-            </p>
         </div>
-    </div>
+    <% } else { %>
+        <% for(i=0; i < projects.length; i++) { %>
+                <div class="col-lg-3 zoom col-md-6 col-sm-12 mb-3">
+                    <div class="card">
+                        <div class="card-header-pills">
+                            <a href="/singleProject/<%= projects[i]._id %>">
+                                <img src="<%= projects[i].image %>"
+                                     class="w-100"
+                                     alt="card-img-1"
+                                />
+                            </a>
+                        </div>
+                        <p class="card-body">
+                            <q><%= projects[i].title %>.</q>
+                        </p>
+                    </div>
+                </div>
+        <% } %>
+    <% } %>
 </div>

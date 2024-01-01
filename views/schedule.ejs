@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<main>
+    <div class="container flex-center text-center">
+        <div class="row justify-content-center align-items-center" style="margin-top: 130px; margin-bottom: 20px;">
+            <div class="col-md-12 wow fadeIn mb-3">
+                <h1 class="display-4 mb-2 wow fadeInDown" data-wow-delay="0.3s">
+                    Current
+                    <a class="grey-text font-weight-bold">Schedule</a>
+                    Plans
+                </h1>
+                <p class="mb-4 h4">
+                    <a href="/newSchedule">Create</a> a new event for the calendar.
+                </p>
+                <%- include('partials/schedule/schedule-data') -%>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('layouts/footer') -%>
+</body>
+<%- include('layouts/scripts') -%>
+</html>
