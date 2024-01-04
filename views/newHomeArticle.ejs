@@ -1,0 +1,27 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container">
+    <div class="row justify-content-center align-items-center text-center d-flex mx-auto flex-center" style="margin-top: 140px; margin-bottom: 70px;">
+        <div class="col-lg-10">
+            <h1 class="mb-3">Create A New Home Article</h1>
+            <form action="/store/homeArticle" method="post" enctype="multipart/form-data">
+                <input type="text" name="title" id="title" placeholder="Your Article Title" class="form-control mb-3" required />
+                <input type="text" name="name" id="subheading" placeholder="Your Name" class="form-control mb-3" required />
+                <input type="file" name="image" id="image" placeholder="Article Image" class="form-control mb-3" accept="image/*" required />
+                <input type="url" name="url" placeholder="Link for article" required class="form-control mb-3" />
+                <textarea name="body" maxlength="330" minlength="220" required class="form-control mb-3" rows="7"></textarea>
+                <button class="btn btn-primary mr-2" type="submit">submit article post</button>
+            </form>
+        </div>
+    </div>
+</main>
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>

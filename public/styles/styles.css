@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 .contact-bg {
     background: url(https://jooinn.com/images/wood-crafting-3.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;

@@ -1,23 +1,22 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema
 
-const HomeIntroPostSchema = new Schema ({
+const HomeArticleSchema = new Schema ({
     title: String,
-    subheading: String,
+    name: String,
     userid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    image: {
-        type: String,
-        required: false
-    },
+    image: String,
+    url: String,
+    body: String,
     datePosted:{
         type: Date,
         default: new Date()
     },
 })
 
-const HomeIntro = mongoose.model('HomeIntro', HomeIntroPostSchema);
-module.exports = HomeIntro;
+const HomeArticle = mongoose.model('HomeArticle', HomeArticleSchema);
+module.exports = HomeArticle;

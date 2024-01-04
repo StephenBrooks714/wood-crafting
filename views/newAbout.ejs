@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container">
+    <div class="row justify-content-center align-items-center text-center d-flex mx-auto flex-center" style="margin-top: 140px; margin-bottom: 70px;">
+        <div class="col-lg-8">
+            <h1 class="mb-3">Create A New Home Intro</h1>
+            <form action="/store/about" method="post" enctype="multipart/form-data">
+                <input type="text" name="title" id="title" placeholder="Your Intro Title" class="form-control mb-3" required />
+                <input type="file" name="image" id="image" placeholder="Intro Image" class="form-control mb-3" accept="image/*" required />
+                <input type="text" name="phone" placeholder="Your Phone#" class="form-control mb-3" required />
+                <input type="email" name="email" placeholder="Your Email" class="form-control mb-3" required />
+                <textarea name="about" class="form-control mb-3" placeholder="Introduce yourself" rows="7"></textarea>
+                <button class="btn btn-primary mr-2" type="submit">submit post</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>

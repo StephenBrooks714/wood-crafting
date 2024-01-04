@@ -1,0 +1,25 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container">
+    <div class="row justify-content-center align-items-center text-center d-flex mx-auto flex-center" style="margin-top: 140px; margin-bottom: 70px;">
+        <div class="col-lg-10">
+            <h1 class="mb-3">Create New Home Subscription Content</h1>
+            <form action="/store/subscription" method="post" enctype="multipart/form-data">
+                <input type="text" name="title" id="title" placeholder="Subscription Title" class="form-control mb-3" required />
+                <input type="text" name="subheading" id="subheading" placeholder="Subscription text" class="form-control mb-3" required />
+                <input type="file" name="image" id="image" placeholder="Subscription Image" class="form-control mb-3" accept="image/*" required />
+                <button class="btn btn-primary mr-2" type="submit">submit article post</button>
+            </form>
+        </div>
+    </div>
+</main>
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>

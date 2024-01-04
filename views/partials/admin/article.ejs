@@ -1,23 +1,30 @@
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">title
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">sub heading
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">image
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">
-        <p class="text-muted">
-            These actions will directly affect the home page article section, below the main introduction.
-            If all is deleted then it will show the default one.
-        </p>
-    </li>
-</ul>
+<% if(homeArticle == "") { %>
+<p class="text-muted mb-2">Default home article showing</p>
+<img src="/assets/articleDefault.png" height="120" width="210" loading="lazy" alt="default home article image" />
+<% } else { %>
+    <% for(i=0; i < homeArticle.length; i++) { %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= homeArticle[i].title %>
+                <i class="fab fa-readme"></i>
+                <br>
+                delete content <a href="/delete/homeArticle/<%= homeArticle[i]._id %>">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <%= homeArticle[i].name %>
+            </li>
+            <li class="list-group-item">
+                <%= homeArticle[i].url %>
+            </li>
+            <li class="list-group-item">
+                <img src="<%= homeArticle[i].image %>" height="110" width="210" loading="lazy" alt="<%= homeArticle[i].title %>">
+            </li>
+            <li class="list-group-item">
+                <p class="text-muted">
+                    <%= homeArticle[i].body.substring(0, 170) %>
+                </p>
+            </li>
+        </ul>
+    <% } %>
+<% } %>

@@ -5,7 +5,7 @@
 <%- include('layouts/navBar') -%>
 <main>
     <div class="container">
-        <div class="row justify-content-center align-items-center" style="margin-top: 110px; margin-bottom: 60px;">
+        <div class="row justify-content-center" style="margin-top: 110px; margin-bottom: 60px;">
             <div class="col-md-12 mb-2">
                 <h1 class="display-4 font-weight-bold mb-2 wow fadeInDown" data-wow-delay="0.3s">Admin <span class="grey-text">Panel</span></h1>
                 <h2 class="wow fadeInLeft delay-1s">
@@ -40,26 +40,46 @@
             </div>
             <hr class="m-4 line">
             <div class="col-md-12 mb-3">
-                <h4 class="h4">Home Page Edits</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4 class="h4">Home Page Edits</h4>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <p><a href="/newAbout">Introduce</a> yourself in a bio.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-4 col-md-6 p-3">
                 <div class="card p-2">
                     <p>Main Intro</p>
-                    <small>New Content<i class="fas fa-plus"></i></small>
-                    <%- include('partials/admin/intro') -%>
+                    <small>New Content
+                        <a href="/newHome"><i class="fas fa-plus"></i></a>
+                    </small>
+                    <% if(home == "") { %>
+                        <p class="text-muted mt-2">Default content Displaying:</p>
+                        <img src="/assets/homeDefault.png" height=110" width="190" loading="lazy" alt="default home" />
+                    <% } else { %>
+                        <%- include('partials/admin/intro') -%>
+                    <% } %>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 p-3">
                 <div class="card p-2">
                     <p>Article Actions</p>
-                    <small>New Article<i class="fas fa-plus"></i></small>
+                    <small>New Article
+                        <a href="/newHomeArticle"><i class="fas fa-plus"></i></a>
+                    </small>
                     <%- include('partials/admin/article') -%>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 p-3">
                 <div class="card p-2">
                     <p>Subscription Actions</p>
-                    <small>New Subscription<i class="fas fa-plus"></i></small>
+                    <small>New Subscription
+                        <a href="/newSubscription">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </small>
                     <%- include('partials/admin/subscribe') -%>
                 </div>
             </div>

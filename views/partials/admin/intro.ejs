@@ -1,23 +1,31 @@
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">title
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">sub heading
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">image
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">
-        <p class="text-muted">
-            These actions will directly affect the home page introduction section, or divert back to default if all is deleted, or use the edit
-            to replace it with new content.
-        </p>
-    </li>
-</ul>
+<% if(home === "") { %>
+<p class="h5">
+    Only default home content showing
+</p>
+<% } else { %>
+    <% for(i=0; i < home.length; i++) { %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= home[i].title %>
+                <i class="far fa-edit"></i>
+                <a href="/">
+                    <i class="fab fa-readme"></i>
+                </a>
+                <a href="/delete/home/<%= home[i]._id %>">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <%= home[i].subheading %>
+            </li>
+            <li class="list-group-item">
+                <img src="<%= home[i].image %>" height="40" width="40" alt="<%= home[i].title %>">
+            </li>
+            <li class="list-group-item">
+                <p class="text-muted">
+                    These actions will directly affect the home page introduction section, or divert back to default if all is deleted, or use the edit
+                    to replace it with new content.
+                </p>
+            </li>
+        </ul>
+    <% } %>
+<% } %>

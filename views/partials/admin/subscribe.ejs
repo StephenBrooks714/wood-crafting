@@ -1,23 +1,23 @@
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">title
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">sub heading
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">image
-        <i class="far fa-edit"></i>
-        <i class="fab fa-readme"></i>
-        <i class="fas fa-trash-alt"></i>
-    </li>
-    <li class="list-group-item">
-        <p class="text-muted">
-            These actions will directly affect the home page subscribe section, or divert back to default if all is deleted, or use the edit
-            to replace it with new content.
-        </p>
-    </li>
-</ul>
+<% if(subscription == "") { %>
+<p>Default home subscription showing</p>
+<img src="/assets/homesubscriptionImage.png" height="110" width="210" loading="lazy" alt="Default home subscription showing" />
+<% } else { %>
+    <% for(i=0; i < subscription.length; i++) { %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= subscription[i].title %>
+                <a href="/#homeSubscription">
+                    <i class="fab fa-readme"></i>
+                </a>
+                <br>
+                Delete content <a href="/delete/homeSubscription/<%= subscription[i]._id %>">
+                   <i class="fas fa-trash-alt"></i>
+                </a>
+            </li>
+            <li class="list-group-item"><%= subscription[i].subheading %>
+            </li>
+            <li class="list-group-item">
+                <img src="<%= subscription[i].image %>" height="110" width="220" loading="lazy" alt="<%= subscription[i].title %>" />
+            </li>
+        </ul>
+    <% } %>
+<% } %>

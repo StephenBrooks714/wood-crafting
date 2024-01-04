@@ -1,76 +1,151 @@
 <div>
+  <% if(subscription == "") { %>
+    <!-- Section -->
+    <section style="background-image: url('https://images.unsplash.com/photo-1501516069922-a9982bd6f3bd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-  <!-- Section -->
-  <section style="background-image: url('https://images.unsplash.com/photo-1501516069922-a9982bd6f3bd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <style>
+        .input-grey .input-group-lg>.input-group-prepend>.input-group-text {
+          border-radius: .125rem;
+        }
 
-    <style>
-      .input-grey .input-group-lg>.input-group-prepend>.input-group-text {
-        border-radius: .125rem;
-      }
+        .input-grey .form-control {
+          border-radius: .125rem;
+        }
 
-      .input-grey .form-control {
-        border-radius: .125rem;
-      }
+        .input-grey .form-control.form-control-lg {
+          font-size: 1rem;
+        }
 
-      .input-grey .form-control.form-control-lg {
-        font-size: 1rem;
-      }
+        .form-control:focus {
+          background-color: rgba(255,255,255,.3);
+        }
 
-      .form-control:focus {
-        background-color: rgba(255,255,255,.3);
-      }
+        .input-grey input::placeholder {
+          color: #fff;
+        }
 
-      .input-grey input::placeholder {
-        color: #fff;
-      }
+        .input-grey .input-group-lg>.form-control:not(textarea) {
+          height: calc(1.5em + 1rem + 6px);
+        }
 
-      .input-grey .input-group-lg>.form-control:not(textarea) {
-        height: calc(1.5em + 1rem + 6px);
-      }
+        .social .fab {
+          width: 30px;
+          height: 30px;
+        }
+      </style>
 
-      .social .fab {
-        width: 30px;
-        height: 30px;
-      }
-    </style>
+      <div class="mask rgba-black-strong py-3">
 
-    <div class="mask rgba-black-strong py-3">
+        <div class="container text-center my-2">
 
-      <div class="container text-center my-2">
+          <h3 class="font-weight-bold text-center white-text pb-2">News and Updates</h3>
+          <p class="lead text-center white-text pt-2 mb-5">Subscribe to our newsletter and receive the latest news
+            from us.</p>
 
-        <h3 class="font-weight-bold text-center white-text pb-2">News and Updates</h3>
-        <p class="lead text-center white-text pt-2 mb-5">Subscribe to our newsletter and receive the latest news
-          from MDB.</p>
-
-        <form class="input-grey mb-5" action="" method="post" enctype="multipart/form-data">
-          <div class="form-row">
-            <div class="col-md-4 ml-auto">
-              <div class="input-group input-group-lg z-depth-1">
-                <div class="input-group-prepend">
-                  <span class="input-group-text rgba-white-light border-0"><i class="fa fa-envelope white-text"></i></span>
+          <form class="input-grey mb-5" action="/send/subscription" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="col-md-4 ml-auto">
+                <div class="input-group input-group-lg z-depth-1">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text rgba-white-light border-0"><i class="fa fa-envelope white-text"></i></span>
+                  </div>
+                  <input type="email" name="from" class="form-control form-control-lg rgba-white-light white-text border-0 z-depth-0" placeholder="Email Address">
                 </div>
-                <input type="email" name="EMAIL" class="form-control form-control-lg rgba-white-light white-text border-0 z-depth-0" placeholder="Email Address">
+              </div>
+
+              <div class="col-md-2 mr-auto">
+                <button class="btn btn-block btn-outline-white" type="submit">Subscribe</button>
               </div>
             </div>
+          </form>
 
-            <div class="col-md-2 mr-auto">
-              <button class="btn btn-block btn-outline-white">Subscribe</button>
-            </div>
+          <div class="social text-center">
+            <a class="mx-1" href="#"><i class="fab fa-facebook-f p-2 rounded rgba-white-light white-text"></i></a>
+            <a class="mx-1" href="#"><i class="fab fa-twitter p-2 rounded rgba-white-light white-text"></i></a>
+            <a class="mx-1" href="#"><i class="fab fa-linkedin-in p-2 rounded rgba-white-light white-text"></i></a>
+            <a class="mx-1" href="#"><i class="fab fa-instagram p-2 rounded rgba-white-light white-text"></i></a>
           </div>
-        </form>
 
-        <div class="social text-center">
-          <a class="mx-1" href="#"><i class="fab fa-facebook-f p-2 rounded rgba-white-light white-text"></i></a>
-          <a class="mx-1" href="#"><i class="fab fa-twitter p-2 rounded rgba-white-light white-text"></i></a>
-          <a class="mx-1" href="#"><i class="fab fa-linkedin-in p-2 rounded rgba-white-light white-text"></i></a>
-          <a class="mx-1" href="#"><i class="fab fa-instagram p-2 rounded rgba-white-light white-text"></i></a>
         </div>
 
       </div>
 
-    </div>
+    </section>
+    <!-- Section -->
+  <% } else { %>
+    <% for(i=0; i < subscription.length; i++) { %>
+        <!-- Section -->
+        <section style="background-image: url('<%= subscription[i].image %>'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-  </section>
-  <!-- Section -->
+          <style>
+            .input-grey .input-group-lg>.input-group-prepend>.input-group-text {
+              border-radius: .125rem;
+            }
 
+            .input-grey .form-control {
+              border-radius: .125rem;
+            }
+
+            .input-grey .form-control.form-control-lg {
+              font-size: 1rem;
+            }
+
+            .form-control:focus {
+              background-color: rgba(255,255,255,.3);
+            }
+
+            .input-grey input::placeholder {
+              color: #fff;
+            }
+
+            .input-grey .input-group-lg>.form-control:not(textarea) {
+              height: calc(1.5em + 1rem + 6px);
+            }
+
+            .social .fab {
+              width: 30px;
+              height: 30px;
+            }
+          </style>
+
+          <div class="mask rgba-black-strong py-3">
+
+            <div class="container text-center my-2">
+
+              <h3 class="font-weight-bold text-center white-text pb-2"><%= subscription[i].title %></h3>
+              <p class="lead text-center white-text pt-2 mb-4">
+                <%= subscription[i].subheading %>.</p>
+
+              <form class="input-grey mb-4" action="/send/subscription" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                  <div class="col-md-4 ml-auto">
+                    <div class="input-group input-group-lg z-depth-1">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rgba-white-light border-0"><i class="fa fa-envelope white-text"></i></span>
+                      </div>
+                      <input type="email" name="from" class="form-control form-control-lg rgba-white-light white-text border-0 z-depth-0" placeholder="Email Address">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 mr-auto">
+                    <button class="btn btn-block btn-outline-white" type="submit">Subscribe</button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="social text-center">
+                <a class="mx-1" href="#"><i class="fab fa-facebook-f p-2 rounded rgba-white-light white-text"></i></a>
+                <a class="mx-1" href="#"><i class="fab fa-twitter p-2 rounded rgba-white-light white-text"></i></a>
+                <a class="mx-1" href="#"><i class="fab fa-linkedin-in p-2 rounded rgba-white-light white-text"></i></a>
+                <a class="mx-1" href="#"><i class="fab fa-instagram p-2 rounded rgba-white-light white-text"></i></a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+        <!-- Section -->
+    <% } %>
+  <% } %>
 </div>
